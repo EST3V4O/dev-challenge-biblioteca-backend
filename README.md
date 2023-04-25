@@ -20,7 +20,6 @@
 * [Desafio](#desafio)
 * [Tecnologias](#tecnologias)
 * [Como começar](#como-começar)
-* [Compartilhe](#compartilhe)
 
 # Devchallenge
 <a href="https://devchallenge.now.sh/"> DevChallenge</a> permite que você evolua suas skills como programador, por meio de projetos propostos pela <a href="https://discord.gg/yvYXhGj">comunidade</a>.
