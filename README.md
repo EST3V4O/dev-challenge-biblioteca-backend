@@ -44,6 +44,11 @@ O Desafio consistia em criar o backend para um sistema de gerenciamento de uma b
 - **[GET]** (`/books`)
   - Utilizada para buscar os `books` existentes
   - Retorna todos os `books` que existem podendo receber `page` e `q` como `query params` para pagina, e pesquisa respectivamente
+  
+- **[GET]** (`/books/:bookId`)
+  - Utilizada para buscar um único `books`
+  - A rota deverá receber um `id` válido de um `book` existente
+  - Retorna as informações de um único `book`
 
 - **[PUT]** (`/books/:bookId`)
   - Utilizada para atualizar as informações de `book`
