@@ -12,6 +12,14 @@ export class InMemoryBookRepository implements BookRepository {
     return book
   }
 
+  async findMany(page: number, query?: string | undefined): Promise<Book[]> {
+    const books = this.items
+      .filter((item) => (query ? item.title.includes(query) : true))
+      .slice((page - 1) * 10, page * 10)
+
+    return books
+  }
+
   async create(data: Prisma.BookUncheckedCreateInput): Promise<Book> {
     const book: Book = {
       authors: data.authors as string[],
