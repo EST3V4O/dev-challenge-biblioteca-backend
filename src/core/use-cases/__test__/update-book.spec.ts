@@ -3,7 +3,7 @@ import { InMemoryBookRepository } from '@/core/repositories/in-memory/in-memory-
 import { Book } from '@prisma/client'
 import { randomUUID } from 'node:crypto'
 import { beforeEach, describe, expect, it } from 'vitest'
-import { UpdateBookUseCase } from '../update-books'
+import { UpdateBookUseCase } from '../update-book'
 
 let repository: InMemoryBookRepository
 let sut: UpdateBookUseCase
