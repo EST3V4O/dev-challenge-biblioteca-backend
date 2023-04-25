@@ -79,6 +79,7 @@ Foi adicionado ao projeto um arquivo `routes.json` dentro da pasta `.insomnia` c
     - Para executar as migrations basta executar no terminal o comando `npx prisma migrate deploy`.
 - Abra o projeto
 - Instale as dependências com `npm`, `yarn` ou `pnpm`
+- Renomeie o arquivo `.env.example` para `.env`
 - Execute `npm run dev`
 
 
