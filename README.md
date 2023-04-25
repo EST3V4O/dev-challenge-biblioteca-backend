@@ -18,45 +18,74 @@
 
 * [Devchallenge](#devchallenge) 
 * [Desafio](#desafio)
-* [Techs](#techs)
+* [Tecnologias](#tecnologias)
 * [Como começar](#como-começar)
 * [Compartilhe](#compartilhe)
 
 # Devchallenge
-<a href="https://devchallenge.now.sh/"> DevChallenge</a> permite que você evolua suas skills como programador! Participe da nossa <a href="https://discord.gg/yvYXhGj">comunidade</a> o/
+<a href="https://devchallenge.now.sh/"> DevChallenge</a> permite que você evolua suas skills como programador, por meio de projetos propostos pela <a href="https://discord.gg/yvYXhGj">comunidade</a>.
 
 # Desafio
-Seu desafio é criar o backend para um sistema de gerenciamento de uma biblioteca!
+O Desafio consistia em criar o backend para um sistema de gerenciamento de uma biblioteca!
 
-## Requisitos:
 ### Rotas da aplicação:
-<b>[POST] </b> /obras :  A rota deverá receber titulo, editora, foto, e autores dentro do corpo da requisição. Ao cadastrar um novo projeto, ele deverá ser armazenado dentro de um objeto no seguinte formato: { id: 1, titulo: 'Harry Potter', editora: 'Rocco',foto: 'https://i.imgur.com/UH3IPXw.jpg', autores: ["JK Rowling", "..."]};<br><br>
-<b>[GET] </b> /obras/ : A rota deverá listar todas as obras cadastradas<br><br>
-<b>[PUT] </b> /obras/:id: : A rota deverá atualizar as informações de titulo, editora, foto e autores da obra com o id presente nos parâmetros da rota<br><br>
-<b>[DELETE] </b> /obras/:id: : A rota deverá deletar a obra com o id presente nos parâmetros da rota<br>
 
+- **[POST]** (`/books`)
+  - Utilizada para criar um novo `book`
+  - A rota deverá receber um `json` com as informações abaixo
+    ```json
+    {
+      "title": "string",
+      "authors": ["string"],
+      "publisher": "string",
+      "url": "string"
+    }
+    ```
 
-# Techs: 
-- Tecnologia que preferir :)
+- **[GET]** (`/books`)
+  - Utilizada para buscar os `books` existentes
+  - Retorna todos os `books` que existem podendo receber `page` e `q` como `query params` para pagina, e pesquisa respectivamente
+
+- **[PUT]** (`/books/:bookId`)
+  - Utilizada para atualizar as informações de `book`
+  - A rota deverá receber um `id` válido de um `book` existente
+  - A rota deverá receber um `json` com as mesmas informações para a criação de um `book`
+    ```json
+    {
+      "title": "string",
+      "authors": ["string"],
+      "publisher": "string",
+      "url": "string"
+    }
+    ```
+
+Foi adicionado ao projeto um arquivo `routes.json` dentro da pasta `.insomnia` com as rotas utilizadas podendo ser importados para o <a href="https://insomnia.rest/">Insomnia</a>.
+
+# Tecnologias: 
+- TypeScript
+- Fastify
+- Prisma
+- Vitest
+- Docker
 
 # Como começar:
-1 - Use esse template (clicando em Use this template) ou faça um fork deste repositório com o código inicial<br>
-2 - Leia as instruções no readme.md<br>
-3 - Comece a codar! Sinta-se livre para utilizar o fluxo de trabalho que ache mais confortável<br>
-4 - Compartilhe seu resultado com a comunidade! #devchallenge
-
-
-# Compartilhe!
-Inicie seu projeto utilizando esse template no seu github como um repositório público<br>
-Faça um print, gif ou vídeo e compartilhe o resultado com a #devchallenge ou marcando nosso perfil @devchallenge!<br>
-
-Desafio criado por  <a href="https://www.linkedin.com/in/lorenagmontes/">Lorena</a> :)
+- Clone o repositório
+- Crie o banco de dados
+  - Utilizado o Docker
+    - Basta executar `docker-compose up -d` que o container do banco de dados será criado
+  - Utilizado o PostgreSQL
+    - Basta criar um banco de dados com o nome `biblioteca-backend`
+  - Executar as migrations
+    - Para executar as migrations basta executar no terminal o comando `npx prisma migrate deploy`.
+- Abra o projeto
+- Instale as dependências com `npm`, `yarn` ou `pnpm`
+- Execute `npm run dev`
 
 
 # Comunidade DevChallenge
 Site: https://www.devchallenge.com.br/ <br>
 Discord: https://discord.gg/yvYXhGj <br>
-Linkedin: https://www.linkedin.com/company/devchallenge/<br>
+LinkedIn: https://www.linkedin.com/company/devchallenge/<br>
 Twitter: https://twitter.com/dev_challenge<br>
 Instagram: https://www.instagram.com/devchallenge/<br>
 
