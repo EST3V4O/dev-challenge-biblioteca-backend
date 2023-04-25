@@ -3,7 +3,7 @@ import { BookRepository } from '../repositories/book-repository'
 
 interface UpdateBookUseCaseRequest {
   title: string
-  publishing_company: string
+  publisher: string
   url: string
   authors: string[]
   bookId: string
@@ -14,7 +14,7 @@ export class UpdateBookUseCase {
 
   async execute({
     authors,
-    publishing_company,
+    publisher,
     title,
     url,
     bookId,
@@ -23,7 +23,7 @@ export class UpdateBookUseCase {
     if (!book) throw new ResourceNotFound()
 
     await this.repository.update(bookId, {
-      publishing_company,
+      publisher,
       title,
       url,
       authors,

@@ -8,11 +8,11 @@ datasource db {
 }
 
 model Book {
-  id                 String   @id @default(uuid())
-  title              String
-  publishing_company String
-  url                String
-  authors            String[]
+  id        String   @id @default(uuid())
+  title     String
+  publisher String
+  url       String
+  authors   String[]
 
   @@map("books")
 }

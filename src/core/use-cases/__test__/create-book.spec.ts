@@ -14,7 +14,7 @@ describe('Create Book Use Case', () => {
   it('should be able to create a new book', async () => {
     const { book } = await sut.execute({
       authors: ['John Doe'],
-      publishing_company: 'My company',
+      publisher: 'My company',
       title: 'Single Programmer',
       url: 'http://localhost:3333',
     })

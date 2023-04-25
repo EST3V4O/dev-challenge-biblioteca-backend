@@ -10,7 +10,7 @@ let sut: GetBookUseCase
 const data = {
   id: randomUUID(),
   authors: ['John Doe'],
-  publishing_company: 'My company',
+  publisher: 'My company',
   title: 'Single Programmer',
   url: 'http://localhost:3333',
 }

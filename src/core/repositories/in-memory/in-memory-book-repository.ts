@@ -24,7 +24,7 @@ export class InMemoryBookRepository implements BookRepository {
     const book: Book = {
       authors: data.authors as string[],
       id: randomUUID(),
-      publishing_company: data.publishing_company,
+      publisher: data.publisher,
       title: data.title,
       url: data.url,
     }

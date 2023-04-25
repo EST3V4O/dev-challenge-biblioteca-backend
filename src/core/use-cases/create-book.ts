@@ -2,7 +2,7 @@ import { BookRepository } from '../repositories/book-repository'
 
 interface CreateBookUseCaseRequest {
   title: string
-  publishing_company: string
+  publisher: string
   url: string
   authors: string[]
 }
@@ -10,14 +10,9 @@ interface CreateBookUseCaseRequest {
 export class CreateBookUseCase {
   constructor(private repository: BookRepository) {}
 
-  async execute({
-    authors,
-    publishing_company,
-    title,
-    url,
-  }: CreateBookUseCaseRequest) {
+  async execute({ authors, publisher, title, url }: CreateBookUseCaseRequest) {
     const book = await this.repository.create({
-      publishing_company,
+      publisher,
       title,
       url,
       authors,

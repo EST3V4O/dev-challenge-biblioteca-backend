@@ -11,7 +11,7 @@ let sut: UpdateBookUseCase
 const data = {
   id: randomUUID(),
   authors: ['John Doe'],
-  publishing_company: 'My company',
+  publisher: 'My company',
   title: 'Single Programmer',
   url: 'http://localhost:3333',
 }
@@ -31,7 +31,7 @@ describe('Update Book Use Case', () => {
 
     await sut.execute({
       authors: data.authors,
-      publishing_company: data.publishing_company,
+      publisher: data.publisher,
       url: data.url,
       title: newData.title,
       bookId: data.id,
@@ -46,7 +46,7 @@ describe('Update Book Use Case', () => {
     await expect(
       sut.execute({
         authors: data.authors,
-        publishing_company: data.publishing_company,
+        publisher: data.publisher,
         url: data.url,
         title: data.title,
         bookId: 'wrong-id',

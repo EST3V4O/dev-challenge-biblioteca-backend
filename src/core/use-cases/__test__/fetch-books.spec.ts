@@ -15,7 +15,7 @@ describe('Fetch Books Use Case', () => {
       const data = {
         id: randomUUID(),
         authors: ['John Doe'],
-        publishing_company: 'My company',
+        publisher: 'My company',
         title: 'Single Programmer',
         url: 'http://localhost:3333',
       }
@@ -26,7 +26,7 @@ describe('Fetch Books Use Case', () => {
     repository.items.push({
       id: randomUUID(),
       authors: ['John Doe'],
-      publishing_company: 'My company',
+      publisher: 'My company',
       title: 'Query',
       url: 'http://localhost:3333',
     })
